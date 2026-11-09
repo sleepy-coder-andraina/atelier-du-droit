@@ -1,0 +1,203 @@
+/* --- Réinitialisation & Typographie --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #2c3e50;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- En-tête --- */
+header {
+    background-color: #0b1d3a;
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.1rem;
+    color: #d1d5db;
+}
+
+/* --- Disposition des 3 Blocs --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    flex: 1;
+}
+
+.services-container {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-top: 4px solid #c59b27;
+    border-radius: 4px;
+    padding: 30px;
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 280px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* --- Hover appliqué UNIQUEMENT au bloc central (2ème enfant) --- */
+.service-box:nth-child(2):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Conteneur interne pour aligner le bouton à droite --- */
+.service-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.service-box h2 {
+    font-size: 1.4rem;
+    color: #0b1d3a;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.service-box p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.95rem;
+    color: #4b5563;
+    text-align: justify;
+}
+
+/* --- Style de la liste des services --- */
+.service-list {
+    margin-top: 12px;
+    padding-left: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.95rem;
+    color: #4b5563;
+    text-align: left;
+}
+
+.service-list li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.service-list li::marker {
+    color: #c59b27;
+}
+
+/* --- Bouton "En savoir plus" aligné à droite --- */
+.btn-more {
+    display: inline-block;
+    align-self: flex-end;
+    margin-top: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #c59b27;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-more:hover {
+    color: #0b1d3a;
+    transform: translateX(4px);
+}
+
+/* --- Bannière de Contact --- */
+.contact-banner {
+    background-color: #0b1d3a;
+    color: #ffffff;
+    padding: 40px 20px;
+    margin-top: auto;
+    border-top: 3px solid #c59b27;
+}
+
+.contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.contact-details {
+    display: flex;
+    gap: 30px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+}
+
+.contact-item span {
+    display: block;
+    color: #c59b27;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-item a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* --- Design Adaptatif (Mobile) --- */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
